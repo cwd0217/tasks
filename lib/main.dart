@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
       ),
-      home: Homepage(),
+      home: Tododetailpage(),
     );
   }
 }

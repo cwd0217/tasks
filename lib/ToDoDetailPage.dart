@@ -10,7 +10,7 @@ class Tododetailpage extends StatelessWidget {
       body: SafeArea(child:
        
       Container(
-
+        
         margin: EdgeInsets.symmetric(vertical: 8),
         padding: EdgeInsets.symmetric(horizontal: 16),
 
@@ -18,19 +18,23 @@ class Tododetailpage extends StatelessWidget {
           borderRadius: BorderRadiusDirectional.circular(12),
           color: Colors.white,
         ),
-        child: Row(
-          children: [
-            Icon(Icons.circle
-            ),
-            SizedBox(width: 12),
-             Expanded(child: Text("할 일 1")),
-             
-            Icon(Icons.star),
-             
-            
+        
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Row(
+            children: [
+              Icon(Icons.circle
+              ),
+              SizedBox(width: 12),
+               Expanded(child: Text("할 일 1")),
+               
+              Icon(Icons.star),
+               
               
-            
-          ],
+                
+              
+            ],
+          ),
         ),
       )),
     );

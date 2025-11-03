@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tasks/page/detail/bottom_sheet_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -46,10 +47,26 @@ class HomePage extends StatelessWidget {
       ),
       // [floating버튼]
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet( // 현재 화면 위에 새로운 창을 띄워주는 함수
+            context: context, // bottomSheet를 어디에 띄울지 알려줌
+            isScrollControlled: true,// 바텀 시트가 화면높이의 절반을 차지할수 있도록 해줌
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+            ),
+          builder:(context){
+            return Padding(
+              padding: EdgeInsets.only(// 이렇게 넣어줘야지 채팅을 쳤을떄 글 공간이 남음
+                bottom: MediaQuery.of(context).viewInsets.bottom,
+              ),
+              child:BottomSheetPage() ,
+              ); 
+          }
+          
+          );
+        },
         shape: CircleBorder(),
         backgroundColor: Colors.deepOrange,
-
         child: Icon(Icons.add, color: Colors.white, size: 24),
       ),
     );

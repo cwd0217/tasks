@@ -1,10 +1,10 @@
-class TodoEntity {
+class ToDoEntity {
   final String title;
   final String? description;
   final bool isFavorite;
   final bool isDone;
 
-  TodoEntity({
+  ToDoEntity({
     required this.title, 
     required this.description, 
     required this.isFavorite, 
